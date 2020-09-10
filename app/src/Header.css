@@ -1,16 +1,18 @@
 .header {
   display: flex;
-  width: 100%;
+  min-height: 6rem;
   justify-content: space-between;
   align-items: center;
-
   background-color: #231f20;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .header__logo {
-  max-width: 20rem;
+  height: 6rem;
 }
 .header__searchInput {
-  width: 80rem;
+  width: 70rem;
 }
 .header__nav {
   display: flex;
@@ -31,4 +33,15 @@
   font-weight: bold;
   color: #fff;
   font-size: 1.4rem;
+}
+
+@media (max-width: 1200px) {
+  .header__searchInput {
+    width: 30rem;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
 }
