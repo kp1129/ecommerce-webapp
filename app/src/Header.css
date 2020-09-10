@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #231f20;
+}
+.header__logo {
+  max-width: 20rem;
+}
+.header__searchInput {
+  width: 80rem;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
+.header__navOption {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.header__navOptionTopLine {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+.header__navOptionBottomLine {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.4rem;
+}
