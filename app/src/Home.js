@@ -13,7 +13,7 @@ const Home = () => {
             <div className="home__container">
                 {/* background ad */}
                 <img className="home__containerAd" alt="Alexa, find free TV shows. Fire TV Stick. $29.99. Limited-time offer." src={backgroundAd} />
-                {/* products */}
+                {/* product display */}
                 <div className="home__row">
                 <Product data={data.products[0]} />
                 <Product data={data.products[1]}/>

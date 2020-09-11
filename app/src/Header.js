@@ -5,7 +5,15 @@ import logo from "./amazon-logo.jpg";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
+import { useHistory } from 'react-router-dom';
+
 const Header = () => {
+  let history = useHistory();
+
+  const handleClickShoppingCart = () => {
+    history.push("/checkout")
+  }
+  
   return (
     <div className="header">
       {/* logo */}
@@ -31,7 +39,7 @@ const Header = () => {
           <span className="header__navOptionBoldLine">Try Prime</span>
         </div>
 
-        <div className="header__navOption header__navOptionShopping">
+        <div onClick={handleClickShoppingCart} className="header__navOption header__navOptionShopping">
           <div className="header__navOptionShoppingCart">
             <span className="header__navOptionItemCount">0</span>
             <ShoppingCartOutlinedIcon className="header__navOptionShoppingCartIcon" />
