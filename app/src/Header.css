@@ -11,8 +11,29 @@
 .header__logo {
   height: 6rem;
 }
+.header__search {
+    display: flex;
+    align-items: center;
+}
+.header__search:active {
+    border-radius: 0 9px 9px 0;
+    border: 3px solid #febd69;
+}
 .header__searchInput {
   width: 70rem;
+  height: 3rem;
+  border: none;
+}
+.header__searchInput:active {
+    border: none !important;
+    margin: 0;
+}
+
+.header__searchIcon {
+    font-size: 3rem !important;
+    background-color: #febd69;
+    border-radius: 0 5px 5px 0;
+    padding: 0.5rem;
 }
 .header__nav {
   display: flex;
@@ -25,14 +46,31 @@
   justify-content: flex-end;
   padding: 1rem;
 }
-.header__navOptionTopLine {
+.header__navOptionPlainLine {
   color: #ccc;
   font-size: 1.2rem;
 }
-.header__navOptionBottomLine {
+.header__navOptionBoldLine {
   font-weight: bold;
   color: #fff;
   font-size: 1.4rem;
+}
+.header__navOptionItemCount {
+    color: #f08804;
+    font-weight: bold;
+}
+.header__navOptionShopping {
+    flex-direction: row;
+    align-items: flex-end;
+}
+.header__navOptionShoppingCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header__navOptionShoppingCartIcon {
+    color: #fff;
+    font-size: 2.5rem !important;
 }
 
 @media (max-width: 1200px) {
@@ -43,5 +81,14 @@
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
+  }
+  .header__search {
+      width: 95%;
+  }
+  .header__searchInput {
+      width: 95%;
+  }
+  .header__nav {
+      width: 95%;
   }
 }

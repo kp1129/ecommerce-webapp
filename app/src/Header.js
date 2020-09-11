@@ -2,6 +2,9 @@ import React from "react";
 import "./Header.css";
 import logo from "./amazon-logo.jpg";
 
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+
 const Header = () => {
   return (
     <div className="header">
@@ -10,27 +13,30 @@ const Header = () => {
       {/* search */}
       <div className="header__search">
         <input className="header__searchInput" type="text" />
+        <SearchIcon className="header__searchIcon" />
       </div>
       {/* nav items */}
       <div className="header__nav">
         <div className="header__navOption">
-          <span className="header__navOptionTopLine">Hello, Sign in</span>
-          <span className="header__navOptionBottomLine">Account & Lists</span>
+          <span className="header__navOptionPlainLine">Hello, Sign in</span>
+          <span className="header__navOptionBoldLine">Account & Lists</span>
         </div>
 
         <div className="header__navOption">
-          <span className="header__navOptionTopLine">Returns</span>
-          <span className="header__navOptionBottomLine">& Orders</span>
+          <span className="header__navOptionPlainLine">Returns</span>
+          <span className="header__navOptionBoldLine">& Orders</span>
         </div>
 
         <div className="header__navOption">
-          {/* <span className="header__navOptionTopLine">Hello, Sign in</span> */}
-          <span className="header__navOptionBottomLine">Try Prime</span>
+          <span className="header__navOptionBoldLine">Try Prime</span>
         </div>
 
-        <div className="header__navOption">
-          {/* <span className="header__navOptionTopLine">Hello, Sign in</span> */}
-          <span className="header__navOptionBottomLine">Cart</span>
+        <div className="header__navOption header__navOptionShopping">
+          <div className="header__navOptionShoppingCart">
+            <span className="header__navOptionItemCount">0</span>
+            <ShoppingCartOutlinedIcon className="header__navOptionShoppingCartIcon" />
+          </div>
+          <span className="header__navOptionBoldLine">Cart</span>
         </div>
       </div>
     </div>
