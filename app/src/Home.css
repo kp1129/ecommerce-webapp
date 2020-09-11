@@ -1,12 +1,22 @@
+.home {
+    margin: 0 auto;
+    max-width: 155rem;
+}
 .home__container {
     height: 60rem;
     /* object-fit: contain; */
     width: 100%;
 }
-.home__container img {
+.home__containerAd {
     max-width: 100%;
     z-index: -1;
-    /* margin-bottom: -15rem; */
+    margin-bottom: -37rem;
     /* cool fadeout toward the bottom effect */
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+.home__row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
 }
