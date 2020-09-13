@@ -1,0 +1,11 @@
+.checkout {
+    display: flex;
+}
+.checkout__left {
+    width: 70%;
+    border: 1px solid blue;
+}
+.checkout__right {
+    width: 30%;
+    border: 1px solid red;
+}

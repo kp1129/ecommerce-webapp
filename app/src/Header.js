@@ -5,19 +5,15 @@ import logo from "./amazon-logo.jpg";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  let history = useHistory();
-
-  const handleClickShoppingCart = () => {
-    history.push("/checkout")
-  }
-  
   return (
     <div className="header">
       {/* logo */}
-      <img alt="amazon logo" className="header__logo" src={logo} />
+      <Link to="/">
+        <img alt="amazon logo" className="header__logo" src={logo} />
+      </Link>
       {/* search */}
       <div className="header__search">
         <input className="header__searchInput" type="text" />
@@ -38,14 +34,15 @@ const Header = () => {
         <div className="header__navOption">
           <span className="header__navOptionBoldLine">Try Prime</span>
         </div>
-
-        <div onClick={handleClickShoppingCart} className="header__navOption header__navOptionShopping">
+        <Link to="/checkout" style={{ textDecoration: "none"}}>
+        <div  className="header__navOption header__navOptionShopping">
           <div className="header__navOptionShoppingCart">
             <span className="header__navOptionItemCount">0</span>
             <ShoppingCartOutlinedIcon className="header__navOptionShoppingCartIcon" />
           </div>
           <span className="header__navOptionBoldLine">Cart</span>
         </div>
+        </Link>
       </div>
     </div>
   );
