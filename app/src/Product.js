@@ -2,6 +2,7 @@ import React from "react";
 import "./Product.css";
 
 import { useStateValue } from './StateProvider';
+import CurrencyFormat from 'react-currency-format';
 
 
 const Product = ({ data }) => {
@@ -26,10 +27,26 @@ const Product = ({ data }) => {
     <div className="product">
       <div className="product__info">
         <p className="product__title">{data.title}</p>
-        <p className="product__price">
+        <CurrencyFormat
+          renderText={(value) => (
+            <p className="product__price">
+              <small>$</small>
+              <strong>{value}</strong>
+          </p>
+          )}
+          value={data.price}
+          decimalScale={2}
+          fixedDecimalScale={true}
+          displayType={"text"}
+          thousandSeparator={true}
+        />
+
+
+
+        {/* <p className="product__price">
             <small>$</small>
             <strong>{data.price}</strong>
-        </p>
+        </p> */}
         <div className="product__rating">
             {/* 4.5 stars */}
             <span role="img" aria-label="star">⭐</span>
