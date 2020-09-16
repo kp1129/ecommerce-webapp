@@ -1,27 +1,26 @@
-import React from 'react'
-import './Checkout.css';
-import Subtotal from './Subtotal';
+import React from "react";
+import "./Checkout.css";
+import Subtotal from "./Subtotal";
+import CheckoutProduct from "./CheckoutProduct";
+import { useStateValue } from './StateProvider';
 
 const Checkout = () => {
-    return (
-        <div className="checkout">
 
+    const [ { cart }, dispatch ] = useStateValue();
 
-            {/* list products in the cart */}
-            <div className="checkout__left">
-                <img className="checkout__ad" alt="" src=""/>
+  return (
+    <div className="checkout">
+      <div className="checkout__left">
+        <img className="checkout__ad" alt="" src="" />
+        <h2>Your Shopping Cart</h2>
+        {/* items from the shopping cart go here */}
+        {cart?.map(item => <CheckoutProduct data={item} />)}
+      </div>
+      <div className="checkout__right">
+        <Subtotal />
+      </div>
+    </div>
+  );
+};
 
-
-                <h2>Your Shopping Cart</h2>
-                {/* items from the shopping cart will go here */}
-            </div>
-
-            {/* subtotal */}
-            <div className="checkout__right">
-                <Subtotal />
-            </div>
-        </div>
-    )
-}
-
-export default Checkout
+export default Checkout;
