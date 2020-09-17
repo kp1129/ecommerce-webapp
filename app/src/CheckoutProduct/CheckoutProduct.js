@@ -2,7 +2,7 @@ import React from "react";
 import "./CheckoutProduct.css";
 
 import CurrencyFormat from 'react-currency-format';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 
 const CheckoutProduct = ({ data }) => {
 

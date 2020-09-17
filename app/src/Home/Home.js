@@ -1,9 +1,9 @@
 import React from 'react'
 import './Home.css';
-import backgroundAd from './alexa-ad.jpg';
+import backgroundAd from '../images/alexa-ad.jpg';
 
-import Product from './Product';
-import { data } from './data';
+import Product from '../Product/Product';
+import { data } from '../data';
 
 
 const Home = () => {

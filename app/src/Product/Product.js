@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 import CurrencyFormat from 'react-currency-format';
 
 

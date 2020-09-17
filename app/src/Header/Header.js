@@ -1,13 +1,13 @@
 import React from "react";
 import "./Header.css";
-import logo from "./amazon-logo.jpg";
+import logo from "../images/amazon-logo.jpg";
 
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
 import { Link } from 'react-router-dom';
 
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 
 const Header = () => {
   // essentially [state, setState]
