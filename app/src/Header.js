@@ -25,10 +25,12 @@ const Header = () => {
       </div>
       {/* nav items */}
       <div className="header__nav">
-        <div className="header__navOption">
+        <Link to="/login" style={{ textDecoration: "none"}}>
+        <div className="header__navOption header__navOptionSignIn">
           <span className="header__navOptionPlainLine">Hello, Sign in</span>
           <span className="header__navOptionBoldLine">Account & Lists</span>
         </div>
+        </Link>
 
         <div className="header__navOption">
           <span className="header__navOptionPlainLine">Returns</span>

@@ -46,6 +46,7 @@
   justify-content: flex-end;
   padding: 1rem;
 }
+
 .header__navOptionPlainLine {
   color: #ccc;
   font-size: 1.2rem;
@@ -54,6 +55,11 @@
   font-weight: bold;
   color: #fff;
   font-size: 1.4rem;
+}
+.header__navOptionSignIn {
+  justify-content: flex-end; 
+  align-items: flex-start;
+  padding-top: 2rem;
 }
 .header__navOptionItemCount {
     color: #f08804;
