@@ -1,8 +1,7 @@
 .checkoutProduct {
     display: flex;
     flex-direction: row;
-    border: 1px solid purple;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 .checkoutProduct__image {
     max-height: 20rem;

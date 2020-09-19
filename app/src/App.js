@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./App.css";
 import Header from "./Header/Header";
@@ -13,7 +13,33 @@ import {
   Route
 } from "react-router-dom";
 
-function App() {
+import { auth } from './firebase/firebase';
+import { useStateValue } from './StateProvider';
+
+const App = () => {
+
+  const [{}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged( (authUser) => {
+      console.log('current user: ', authUser)
+
+      if (authUser){
+        // user logged in / was logged in (in case of page refresh)
+        dispatch({
+          type: "SET_USER",
+          user: authUser
+        })
+      } else {
+        // user is logged out
+        dispatch({
+          type: "SET_USER",
+          user: null
+        })
+      }
+    })
+  }, []);
+
   return (
     <Router>
     <div className="app">

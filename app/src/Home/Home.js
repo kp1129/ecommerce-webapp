@@ -9,7 +9,6 @@ import { data } from '../data';
 const Home = () => {
     return (
         <div className="home">
-            {console.log(data.products[0])}
             <div className="home__container">
                 {/* background ad */}
                 <img className="home__containerAd" alt="Alexa, find free TV shows. Fire TV Stick. $29.99. Limited-time offer." src={backgroundAd} />

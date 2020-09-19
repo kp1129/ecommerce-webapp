@@ -41,8 +41,6 @@ const Product = ({ data }) => {
           thousandSeparator={true}
         />
 
-
-
         {/* <p className="product__price">
             <small>$</small>
             <strong>{data.price}</strong>
