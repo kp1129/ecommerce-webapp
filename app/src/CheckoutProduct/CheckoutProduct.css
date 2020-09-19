@@ -29,3 +29,6 @@
     border-color: #a88734 #9c7e31 #846a29;
     padding: 0.5rem 3rem;
 }
+.checkoutProduct__info button:active {
+    transform: translateY(2px);
+}
