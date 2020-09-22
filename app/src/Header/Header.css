@@ -1,12 +1,11 @@
 .header {
+  position: relative;
   display: flex;
   min-height: 6rem;
   justify-content: space-between;
   align-items: center;
   background-color: #231f20;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  
 }
 .header__logo {
   height: 6rem;
@@ -109,13 +108,9 @@
 }
 @media (max-width: 600px) {
   .header {
-    position: fixed;
     flex-direction: column;
     min-height: 27vh;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 2;
     margin-bottom: 10vh;
   }
   .header__search {

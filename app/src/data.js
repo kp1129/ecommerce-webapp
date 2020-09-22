@@ -27,6 +27,20 @@ export const data = {
             price: 18.59,
             rating: 4,
             image: "https://images-na.ssl-images-amazon.com/images/I/4137OkbPQ4L._SX331_BO1,204,203,200_.jpg"
+        },
+        {
+            id: 5,
+            title: 'COWIN E7 Active Noise Cancelling Bluetooth Headphones with Microphone Wireless Headphones Over Ear, 30H Playtime for Travel Work TV Computer Cellphone - White',
+            price: 59.49,
+            rating: 4,
+            image: "https://images-na.ssl-images-amazon.com/images/I/51jdGGka%2BYL._AC_SL1000_.jpg"
+        },
+        {
+            id: 6,
+            title: 'Philips 328E1CA 32" Curved Monitor, 4K UHD, 120% sRGB, Adaptive-Sync, Speakers, Vesa, 4Yr Advance Replacement Warranty',
+            price: 342.00,
+            rating: 4,
+            image: "https://images-na.ssl-images-amazon.com/images/I/71rkUQLNyQL._AC_SX679_.jpg"
         }
     ]
 }

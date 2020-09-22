@@ -5,13 +5,15 @@ import logo from "../images/amazon-logo.jpg";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { useStateValue } from "../StateProvider";
 import { auth } from "../firebase/firebase";
 
 const Header = () => {
   const [{ cart, user }, dispatch] = useStateValue();
+
+  const currentLoc = useParams();
 
   const handleAuthentication = () => {
     if (user) {
@@ -32,7 +34,7 @@ const Header = () => {
       </div>
       {/* nav items */}
       <div className="header__nav">
-        <Link to={!user && "/login"} style={{ textDecoration: "none" }}>
+        <Link to={user ? currentLoc : "/login"} style={{ textDecoration: "none" }}>
           <div
             onClick={handleAuthentication}
             className="header__navOption header__navOptionSignIn"

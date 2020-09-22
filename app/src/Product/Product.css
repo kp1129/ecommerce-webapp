@@ -59,7 +59,8 @@
     .product {
         min-height: 60vh;
         justify-content: space-between;
-        width: 90%;
+        width: 100%;
+        margin-left: 0;
     }
     .product img {
         max-height: 35vh;
