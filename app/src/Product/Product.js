@@ -40,20 +40,10 @@ const Product = ({ data }) => {
           displayType={"text"}
           thousandSeparator={true}
         />
-
-        {/* <p className="product__price">
-            <small>$</small>
-            <strong>{data.price}</strong>
-        </p> */}
         <div className="product__rating">
-            {/* 4.5 stars */}
             {Array(Math.floor(data.rating)).fill().map((_, i) => (
               <span role="img" aria-label="star">⭐</span>
             ))}
-            {/* <span role="img" aria-label="star">⭐</span>
-            <span role="img" aria-label="star">⭐</span>
-            <span role="img" aria-label="star">⭐</span>
-            <span role="img" aria-label="star">⭐</span> */}
         </div>
       </div>
       <img alt={`${data.title} product cover`} src={data.image} />

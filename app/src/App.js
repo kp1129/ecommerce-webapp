@@ -22,8 +22,6 @@ const App = () => {
 
   useEffect(() => {
     auth.onAuthStateChanged( (authUser) => {
-      console.log('current user: ', authUser)
-
       if (authUser){
         // user logged in / was logged in (in case of page refresh)
         dispatch({
