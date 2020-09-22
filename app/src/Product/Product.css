@@ -40,3 +40,35 @@
 .product__addToCart:active {
     transform: translateY(2px);
 }
+
+@media (max-width: 1200px) {
+    .product {
+        width: 45%;
+    }
+    .product__price {
+        font-size: 1.75rem;
+        margin: 1rem 0;
+    }
+    .product__addToCart {
+        height: 4rem;
+        width: 50%;
+        font-size: 1.75rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .product {
+        min-height: 60vh;
+        justify-content: space-between;
+        width: 90%;
+    }
+    .product img {
+        max-height: 35vh;
+    }
+    .product__addToCart {
+        height: 4.5rem;
+        width: 70%;
+        font-size: 1.75rem;
+    }
+
+  }
+  

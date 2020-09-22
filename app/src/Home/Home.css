@@ -18,5 +18,36 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-
 }
+
+@media (max-width: 1200px) {    
+    .home {
+        margin-top: 12vh;
+    }
+    .home__containerAd {
+        display: none;
+    }
+    .home__row {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+    
+  }
+  @media (max-width: 600px) {
+    .home {
+        width: 100%;
+        margin-top: 25vh;
+    }
+    .home__container {
+        width: 100%;
+        object-fit: contain;        
+    }
+   .home__containerAd {
+      display: none;
+   }
+   .home__row {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+  }
