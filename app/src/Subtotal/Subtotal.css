@@ -1,31 +1,52 @@
 .subtotal {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 10rem;
-    border: 1px solid #dddddd;
-    background-color: #f3f3f3;
-    border-radius: 3px;
-    padding: 2rem;
-    font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 10rem;
+  border: 1px solid #dddddd;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  padding: 2rem;
+  font-size: 1.5rem;
 }
 .subtotal__gift {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .subtotal__gift input {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 .subtotal button {
-    background-color: #f0c14b;
-    color: #111;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    border: 1px solid;
-    border-color: #a88734 #9c7e31 #846a29
+  background-color: #f0c14b;
+  color: #111;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
 }
 .subtotal button:active {
-    transform: translateY(2px);
+  transform: translateY(2px);
 }
+
+@media (max-width: 1200px) {
+  .subtotal {
+    width: 60%;
+    margin: 2rem auto 0;
+  }
+  .subtotal button {
+    height: 4.5rem;
+    width: 70%;
+    margin: 1rem auto 0;
+  }
+}
+@media (max-width: 600px) {
+  .subtotal {
+    width: 100%;
+  }
+  .subtotal button {
+      width: 100%;
+  }
+}
+

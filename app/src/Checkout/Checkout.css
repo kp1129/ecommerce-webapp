@@ -16,3 +16,27 @@
     width: 100%;
     margin-bottom: 1rem;
 }
+
+@media (max-width: 1200px) {
+    .checkout {
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .checkout__left {
+        width: 100%;
+    }
+    .checkout__right {
+        width: 100%;
+    }
+  }
+  @media (max-width: 600px) {
+   .checkout {
+       margin-top: 27vh;
+   }
+   .checkout__ad {
+       display: none;
+   }
+  }
+  
+  
