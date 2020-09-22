@@ -42,7 +42,7 @@ const Product = ({ data }) => {
         />
         <div className="product__rating">
             {Array(Math.floor(data.rating)).fill().map((_, i) => (
-              <span key={`2-${i}`} role="img" aria-label="star">⭐</span>
+              <span role="img" aria-label="star">⭐</span>
             ))}
         </div>
       </div>
