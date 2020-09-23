@@ -23,6 +23,8 @@ Users can view the contents of their shopping Cart, and remove the items they no
 
 The frontend is built in React, and bootstrapped with create-react-app.  
 
+The data layer is implemented with React's Context API using a reducer pattern.  
+
 Styling is plain CSS and Material UI.
 
 Authentication is implemented with Firebase.
