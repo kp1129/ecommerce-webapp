@@ -34,7 +34,10 @@ const Header = () => {
       </div>
       {/* nav items */}
       <div className="header__nav">
-        <Link to={user ? currentLoc : "/login"} style={{ textDecoration: "none" }}>
+        <Link
+          to={user ? currentLoc : "/login"}
+          style={{ textDecoration: "none" }}
+        >
           <div
             onClick={handleAuthentication}
             className="header__navOption header__navOptionSignIn"
@@ -47,12 +50,10 @@ const Header = () => {
             </span>
           </div>
         </Link>
-
         <div className="header__navOption">
           <span className="header__navOptionPlainLine">Returns</span>
           <span className="header__navOptionBoldLine">& Orders</span>
         </div>
-
         <div className="header__navOption">
           <span className="header__navOptionBoldLine">Try Prime</span>
         </div>

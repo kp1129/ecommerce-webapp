@@ -99,6 +99,9 @@
   .header__search {
     max-width: 30rem;
   }
+  .header__nav {
+    align-items: flex-end;
+  }
   .header__navOptionSignIn {
     margin-top: 2rem;
   }
