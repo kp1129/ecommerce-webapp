@@ -5,7 +5,7 @@ export const initialState = {
 
 // instead of keeping track of subtotal in state,
 // we can use a selector
-export const getCartSubtotal = (cart) =>
+export const getCartTotal = (cart) =>
   cart?.reduce((acc, item) => acc + item.price, 0);
 
 const reducer = (state, action) => {
