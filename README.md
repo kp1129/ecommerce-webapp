@@ -1,5 +1,6 @@
 # ecommerce-webapp
-A modern storefront inspired by Amazon! 
+A modern storefront inspired by Amazon!    
+
 [VIEW LIVE DEMO](https://ecommerce-webapp-4ef53.web.app/)
 
 ## Stack:
