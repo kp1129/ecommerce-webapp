@@ -1,44 +1,26 @@
 # ecommerce-webapp
+A modern storefront inspired by Amazon! 
 [VIEW LIVE DEMO](https://ecommerce-webapp-4ef53.web.app/)
 
-## Intro
+## Stack:
+- React
+- Context API
+- React Router
+- Stripe
+- Material UI
+- CSS
+- Firebase (user auth)
+- Firestore (realtime database)
+- react-currency-format
 
-This ecommerce storefront is an Amazon clone.
+## Features
+- User registration and sign-in
+- Add/remove products from cart
+- View cart items
+- Checkout (credit card payments processed by Stripe)
+- (work in progress) View past orders 
 
-## Use
-
-Users can register a new account, sign in and sign out.
-
-Users can view the products available in the store.
-
-Each product has a title, price, star rating, and product image on display.
-
-Users can add products to cart.
-
-Users can see how many items they have in the cart (displayed in the header).
-
-Users can view the contents of their shopping Cart, and remove the items they no longer want.
-
-## Stack
-
-The frontend is built in React, and bootstrapped with create-react-app.  
-
-The data layer is implemented with React's Context API using a reducer pattern.  
-
-Styling is plain CSS and Material UI.
-
-Authentication is implemented with Firebase.
-
-This is a single-page app, and all URL routing was implemented with React Router.
-
-The currency in this app is displayed using react-currency-format.
-
-The current version of the app is deployed on Firebase and can be viewed [HERE](https://ecommerce-webapp-4ef53.web.app/)
+Deployed on Firebase
 
 ## Project status
-
 This project is still being developed.
-
-## Future direction
-
-The next feature I am going to implement is a payment system with Stripe.  
