@@ -33,7 +33,10 @@ function Payment() {
       setClientSecret(response.data.clientSecret);
     }
     getClientSecret();
+    console.log('client secret: ', clientSecret);
   }, [cart])
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,6 +49,11 @@ function Payment() {
       setSucceeded(true);
       setError(null);
       setProcessing(false);
+
+      dispatch({
+        type: 'EMPTY_CART'
+      })
+
       history.replace('/orders');
     })
   }
