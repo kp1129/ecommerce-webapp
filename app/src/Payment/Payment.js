@@ -4,10 +4,11 @@ import "./Payment.css";
 import { useStateValue } from "../StateProvider";
 import { Link, useHistory } from "react-router-dom";
 import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../reducer";
 import axios from "../axios";
+import { db } from "../firebase/firebase";
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -22,45 +23,55 @@ function Payment() {
 
   const [clientSecret, setClientSecret] = useState("");
 
-
   useEffect(() => {
     // get client secret
     const getClientSecret = async () => {
       const response = await axios({
-        method: 'post',
-        url: `/payments/create?total=${getCartTotal(cart) * 100}`
+        method: "post",
+        url: `/payments/create?total=${getCartTotal(cart) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
-    }
+    };
     getClientSecret();
-    console.log('client secret: ', clientSecret);
-  }, [cart])
-
-  
+    console.log("client secret: ", clientSecret);
+  }, [cart]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
-    const payload = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement)
-      }
-    }).then(({ paymentIntent }) => {
-      setSucceeded(true);
-      setError(null);
-      setProcessing(false);
-
-      dispatch({
-        type: 'EMPTY_CART'
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
       })
+      .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            cart: cart,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
 
-      history.replace('/orders');
-    })
-  }
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_CART",
+        });
+
+        history.replace("/orders");
+      });
+  };
 
   const handleChange = (e) => {
-    // stuff will go here
-  }
+    setDisabled(e.empty);
+    setError(e.error ? e.error.message : "");
+  };
 
   return (
     <div className="payment">
@@ -97,23 +108,21 @@ function Payment() {
               <CardElement onChange={handleChange} />
               <div className="payment__priceContainer">
                 <CurrencyFormat
-                  renderText={( value ) => (
-                    <h3>Order Total: {value} </h3>
-                  )}
+                  renderText={(value) => <h3>Order Total: {value} </h3>}
                   decimalScale={2}
                   value={getCartTotal(cart)}
                   displayType={"text"}
                   thousandSeparator={true}
-                  prefix={"$"}                
+                  prefix={"$"}
                 />
                 <button disabled={processing || disabled || succeeded}>
-                  <span>{ processing ? "Processing" : "Buy now" }</span>
+                  <span>{processing ? "Processing" : "Buy now"}</span>
                 </button>
               </div>
             </form>
-            { error && <div>{error}</div> }
+            {error && <div>{error}</div>}
           </div>
-        </div>        
+        </div>
       </div>
     </div>
   );
