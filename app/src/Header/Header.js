@@ -50,10 +50,12 @@ const Header = () => {
             </span>
           </div>
         </Link>
-        <div className="header__navOption">
-          <span className="header__navOptionPlainLine">Returns</span>
-          <span className="header__navOptionBoldLine">& Orders</span>
-        </div>
+        <Link to="/orders"  style={{ textDecoration: "none" }}>
+          <div className="header__navOption header__navOptionOrders">
+            <span className="header__navOptionPlainLine">Returns</span>
+            <span className="header__navOptionBoldLine">& Orders</span>
+          </div>
+        </Link>
         <div className="header__navOption">
           <span className="header__navOptionBoldLine">Try Prime</span>
         </div>

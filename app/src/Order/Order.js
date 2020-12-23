@@ -29,5 +29,5 @@ function Order({ order }) {
     </div>
   );
 }
-
+ 
 export default Order;

@@ -60,6 +60,11 @@
   align-items: flex-start;
   padding-top: 2rem;
 }
+.header__navOptionOrders {
+  justify-content: flex-end; 
+  align-items: flex-start;
+  padding-top: 2rem;
+}
 .header__navOptionItemCount {
     color: #f08804;
     font-weight: bold;
