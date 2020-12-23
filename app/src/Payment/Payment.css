@@ -27,3 +27,16 @@
 .payment__details {
     max-width: 50rem;
 }
+.payment__priceContainer > h3 {
+    padding-bottom: 2rem;
+}
+.payment__button {
+    background-color: #f0c14b;
+    color: #111;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+}
